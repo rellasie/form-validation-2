@@ -12,7 +12,7 @@ This repository contains a form validation web project built with HTML, CSS, and
 
 ## Installation
 
-1. Clone the [repository](https://github.com/rellasie/form-validation-js.git).
+1. Clone the [repository](https://github.com/rellasie/form-validation-2.git).
 2. Open the project in your preferred code editor.
 
 ## Usage
