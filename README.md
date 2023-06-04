@@ -17,7 +17,7 @@ This repository contains a form validation web project built with HTML, CSS, and
 
 ## Usage
 
-1. Open the `index.html` file in a web browser.
+1. Open the `index.html` file in a web browser. (or you can access the project through this [link](https://rellasie.github.io/form-validation-2/))
 2. Fill out the form fields and observe the validation feedback.
 3. Submit the form to see the validation in action.
 
