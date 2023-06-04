@@ -1,7 +1,10 @@
-function Validator(formSelector, options) {
-    // assign default value for param (ES5)
-    if (!options) {
-        options = {}
+function Validator(formSelector) {
+    var _this = this
+    var formRules = {
+        /* expected
+            fullname: 'required',
+            email: 'required|email',
+        */
     }
 
     function getParent(element, selector) {
@@ -11,13 +14,6 @@ function Validator(formSelector, options) {
             }
             element = element.parentElement
         }
-    }
-
-    var formRules = {
-        /* expected
-            fullname: 'required',
-            email: 'required|email',
-        */
     }
 
     /** Quy ước tạo rules:
@@ -143,7 +139,7 @@ function Validator(formSelector, options) {
 
         // when there's no error, submit form
         if (isValid) {
-            if (typeof options.onSubmit === 'function') {
+            if (typeof _this.onSubmit === 'function') {
                 var enableInputs = formElement.querySelectorAll('[name]')
 
                 var formValues = Array.from(enableInputs).reduce(function (values, input) {
@@ -173,7 +169,7 @@ function Validator(formSelector, options) {
                 }, {})
 
                 // recalling onSubmit, return input values of form
-                options.onSubmit(formValues)
+                _this.onSubmit(formValues)
             } else {
                 formElement.submit()
             }
