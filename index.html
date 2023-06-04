@@ -43,7 +43,11 @@
 
     <script src="./validator.js"></script>
     <script>
-        Validator('#register-form')
+        Validator('#register-form', {
+            onSubmit: function (data) {
+                console.log(data)
+            }
+        })
     </script>
 </body>
 
