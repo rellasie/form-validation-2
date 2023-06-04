@@ -80,6 +80,7 @@ function Validator(formSelector) {
 
             // event listener for validation (blur, change,...)
             input.onblur = handleValidate
+            input.oninput = handleClearError
         }
 
         // function to validate
@@ -97,10 +98,23 @@ function Validator(formSelector) {
                 var formGroup = getParent(event.target, '.form-group')
 
                 if (formGroup) {
+                    formGroup.classList.add('invalid')
                     var formMessage = formGroup.querySelector('.form-message')
                     if (formMessage) {
                         formMessage.innerText = errorMessage
                     }
+                }
+            }
+        }
+
+        function handleClearError(event) {
+            var formGroup = getParent(event.target, '.form-group')
+            if (formGroup.classList.contains('invalid')) {
+                formGroup.classList.remove('invalid')
+                var formMessage = formGroup.querySelector('.form-message')
+
+                if (formMessage) {
+                    formMessage.innerText = ''
                 }
             }
         }
